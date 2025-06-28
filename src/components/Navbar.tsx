@@ -1,18 +1,61 @@
 // components/Navbar.tsx
 "use client"
-import Image from "next/image"
+
 import Link from "next/link"
+import { useEffect, useState } from "react"
+import { supabase } from "@/lib/supabaseClient"
+import { useRouter } from "next/navigation"
 
 export default function Navbar() {
+  const [user, setUser] = useState<any>(null)
+  const router = useRouter()
+
+  useEffect(() => {
+    async function fetchUser() {
+      const { data } = await supabase.auth.getUser()
+      setUser(data.user)
+    }
+    fetchUser()
+  }, [])
+
+  async function handleLogout() {
+    await supabase.auth.signOut()
+    router.push("/auth/login")
+  }
+
   return (
-    <nav className="bg-primary text-white px-4 py-3 flex items-center justify-between">
-      <div className="flex items-center gap-2">
-        <Image src="/logo_w.png" alt="Nimbus Logo" width={40} height={40} />
-        <span className="text-xl font-heading tracking-wide">nimbus</span>
-      </div>
-      <Link href="/dashboard" className="hover:underline text-sm">
-        Dashboard
+    <header className="w-full px-6 py-4 flex justify-between items-center border-b">
+      <Link href="/" className="text-xl font-bold text-blue-600">
+        Nimbus
       </Link>
-    </nav>
+
+      <nav className="flex items-center gap-4">
+        {user ? (
+          <>
+            <span className="text-gray-700 text-sm">
+              Hi, {user.email?.split("@")[0]}
+            </span>
+            <button
+              onClick={handleLogout}
+              className="text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded"
+            >
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link href="/auth/login" className="text-sm hover:underline">
+              Login
+            </Link>
+            <Link
+              href="/auth/register"
+              className="text-sm text-blue-600 hover:underline"
+            >
+              Sign Up
+            </Link>
+          </>
+        )}
+      </nav>
+    </header>
   )
 }

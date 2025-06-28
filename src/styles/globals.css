@@ -124,3 +124,59 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.hero-img {
+  position: absolute;
+  opacity: 0;
+  width: 140px;
+  border-radius: 0.5rem;
+  transform: scale(0.95);
+  animation: floatIn 1s forwards;
+}
+
+.img-1 { top: 10%; left: 5%; animation-delay: 0.2s; }
+.img-2 { top: 25%; left: 70%; animation-delay: 0.4s; }
+.img-3 { top: 55%; left: 15%; animation-delay: 0.6s; }
+.img-4 { top: 30%; left: 50%; animation-delay: 0.8s; }
+.img-5 { top: 60%; left: 80%; animation-delay: 1s; }
+.img-6 { top: 12%; left: 40%; animation-delay: 1.2s; }
+.img-7 { top: 70%; left: 60%; animation-delay: 1.4s; }
+.img-8 { top: 45%; left: 30%; animation-delay: 1.6s; }
+.img-9 { top: 15%; left: 85%; animation-delay: 1.8s; }
+.img-10 { top: 65%; left: 40%; animation-delay: 2s; }
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.nimbus-ui {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  animation: uiFadeIn 1s forwards 2.4s;
+}
+
+@keyframes uiFadeIn {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.final-text {
+  opacity: 0;
+  animation: fadeIn 1s forwards 3s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}

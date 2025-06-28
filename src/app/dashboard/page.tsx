@@ -1,18 +1,12 @@
-// app/dashboard/page.tsx
-"use client"
+import DashboardLayout from "@/components/DashboardLayout"
 
-import FileUploader from "@/components/FileUploader"
-import FileList from "@/components/FileList"
-import { useState } from "react"
-
-export default function Dashboard() {
-  const [refresh, setRefresh] = useState(false)
-
+export default function DashboardPage() {
   return (
-    <main className="max-w-2xl mx-auto mt-10 space-y-6">
-      <h1 className="text-2xl font-bold text-center">Nimbus Dashboard</h1>
-      <FileUploader onUpload={() => setRefresh(!refresh)} />
-      <FileList key={refresh.toString()} />
-    </main>
+    <DashboardLayout>
+      <h1 className="text-2xl font-bold mb-4">Welcome to Nimbus</h1>
+      <p className="text-gray-700">
+        Ready to store your files? Use the sidebar to navigate.
+      </p>
+    </DashboardLayout>
   )
 }
