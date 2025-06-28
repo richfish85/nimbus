@@ -5,15 +5,28 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { supabase } from "@/lib/supabaseClient"
 import { useRouter } from "next/navigation"
+type User = {
+  id: string
+  email: string | null
+  // add other fields as needed
+}
 
 export default function Navbar() {
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<User | null>(null)
   const router = useRouter()
 
   useEffect(() => {
     async function fetchUser() {
       const { data } = await supabase.auth.getUser()
-      setUser(data.user)
+      setUser(
+        data.user
+          ? {
+              id: data.user.id,
+              email: data.user.email ?? null,
+              // add other fields as needed
+            }
+          : null
+      )
     }
     fetchUser()
   }, [])

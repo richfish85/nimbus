@@ -7,10 +7,11 @@ import { ReactNode } from "react"
 import { supabase } from "@/lib/supabaseClient"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
+import { User } from "@supabase/supabase-js"
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname()
-  const [user, setUser] = useState<unknown>(null)
+  const [user, setUser] = useState<User | null>(null)
   const router = useRouter()
 
   useEffect(() => {
