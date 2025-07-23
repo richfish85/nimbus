@@ -1,0 +1,90 @@
+.
+├── README.md
+├── components.json
+├── eslint.config.mjs
+├── lib
+│   └── supabase.ts
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── project-structure.txt
+├── public
+│   ├── apple-touch-icon.png
+│   ├── da256eb8-7add-4ed4-a3fb-a0b09c2de7e1.webp
+│   ├── favicon-96x96.png
+│   ├── favicon.svg
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── hero
+│   │   ├── favicon.ico
+│   │   ├── hero_comp_1.webp
+│   │   ├── hero_comp_10.webp
+│   │   ├── hero_comp_11.webp
+│   │   ├── hero_comp_12.webp
+│   │   ├── hero_comp_13.webp
+│   │   ├── hero_comp_14.webp
+│   │   ├── hero_comp_15.webp
+│   │   ├── hero_comp_16.webp
+│   │   ├── hero_comp_17.webp
+│   │   ├── hero_comp_18.webp
+│   │   ├── hero_comp_19.webp
+│   │   ├── hero_comp_2.webp
+│   │   ├── hero_comp_20.webp
+│   │   ├── hero_comp_21.webp
+│   │   ├── hero_comp_3.webp
+│   │   ├── hero_comp_4.webp
+│   │   ├── hero_comp_5.webp
+│   │   ├── hero_comp_6.webp
+│   │   ├── hero_comp_7.webp
+│   │   ├── hero_comp_8.webp
+│   │   ├── hero_comp_9.webp
+│   │   ├── logo.png
+│   │   └── nimbus-ui-final.webp
+│   ├── logo.png
+│   ├── logo_w.png
+│   ├── next.svg
+│   ├── og-preview.png
+│   ├── site.webmanifest
+│   ├── vercel.svg
+│   ├── web-app-manifest-192x192.png
+│   ├── web-app-manifest-512x512.png
+│   └── window.svg
+├── src
+│   ├── app
+│   │   ├── auth
+│   │   │   ├── login
+│   │   │   │   └── page.tsx
+│   │   │   ├── register
+│   │   │   │   └── page.tsx
+│   │   │   ├── reset
+│   │   │   │   └── page.tsx
+│   │   │   └── verify
+│   │   │       └── page.tsx
+│   │   ├── dashboard
+│   │   │   └── page.tsx
+│   │   ├── favicon.ico
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── profile
+│   │   │   └── page.tsx
+│   │   └── upload
+│   │       └── page.tsx
+│   ├── components
+│   │   ├── AuthForm.tsx
+│   │   ├── DashboardLayout.tsx
+│   │   ├── FileList.tsx
+│   │   ├── FileUploader.tsx
+│   │   ├── Navbar.tsx
+│   │   └── NimbusHero.tsx
+│   ├── lib
+│   │   ├── supabaseClient.ts
+│   │   └── utils.ts
+│   └── styles
+│       └── globals.css
+├── tailwind.config.js
+├── tree.txt
+└── tsconfig.json
+
+17 directories, 71 files
