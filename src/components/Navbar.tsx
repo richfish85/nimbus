@@ -46,7 +46,7 @@ export default function Navbar() {
         {user ? (
           <>
             <span className="text-gray-700 text-sm">
-              Hi, {user.email?.split("@")[0]}
+              Hi, {user?.email?.split("@")[0]}
             </span>
             <button
               onClick={handleLogout}
