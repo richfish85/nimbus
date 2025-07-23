@@ -44,7 +44,7 @@ useEffect(() => {
   return (
     <div className="w-screen flex justify-center items-center bg-gray-100">
     <section
-  className="relative w-screen h-[700px] bg-gradient-to-b from-white to-gray-50 overflow-hidden"
+  className="relative w-screen h-[400px] bg-gradient-to-b from-white to-gray-50 overflow-hidden"
 >
       {positions.length > 0 &&
         imageList.map((src, i) => (
