@@ -76,6 +76,17 @@ export default function ProfilePage() {
     await supabase.storage.from("avatars").upload(filePath, file, { upsert: true })
     const { data } = await supabase.storage.from("avatars").getPublicUrl(filePath)
 
+    const { error: uploadErr } = await supabase
+      .storage
+      .from("avatars")
+      .upload(filePath, file, { upsert: true, contentType: file.type });
+
+    if (uploadErr) {
+      console.error("[Avatar upload] ", uploadErr);
+      setMsg(uploadErr.message);
+      return;
+    }
+
     // save to user_metadata
     await supabase.auth.updateUser({ data: { avatar_url: data.publicUrl } })
     setAvatarUrl(data.publicUrl)
@@ -115,7 +126,7 @@ export default function ProfilePage() {
         <div className="flex items-center gap-4">
           <div className="relative w-24 h-24">
             <img
-              src={avatarUrl ?? "/avatar-placeholder.png"}
+              src={avatarUrl ?? "/display_placeholder.png"}
               alt="avatar"
               className="w-24 h-24 rounded-full object-cover border"
             />

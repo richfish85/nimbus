@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌩️ Nimbus — Personal Cloud Storage Platform
 
-## Getting Started
+Nimbus is a sleek, user-friendly cloud storage platform built with **Next.js**, **Tailwind CSS**, and **Supabase**. Designed to demonstrate secure file handling, storage management, and user account operations, Nimbus offers a strong foundation for scalable cloud-native applications.
 
-First, run the development server:
+> _“Because you were there.”_ — Nimbus tagline
 
-```bash
+---
+
+## 🚀 Features
+
+- **Authentication & Authorization**  
+  - Secure login/logout using Supabase Auth
+  - Role-based route protection (client-side guarding)
+
+- **Cloud File Uploads & Downloads**  
+  - File uploads linked to individual user folders
+  - Public and signed download links
+  - Storage quota indicator and usage stats
+
+- **Dashboard with Analytics**  
+  - File count, last upload date, and storage used
+  - Pagination for browsing large uploads
+
+- **Responsive UI Modes**  
+  - Toggle between List, Thumbnail, and Detail views
+  - Clean Tailwind CSS styling with light/dark support planned
+
+- **User Profile Management**  
+  - Editable email and password
+  - Avatar upload using Supabase Storage
+  - Visual upload progress and usage bar
+
+---
+
+## 🧰 Built With
+
+| Tech             | Purpose                                |
+|------------------|----------------------------------------|
+| **Next.js 14**   | Frontend framework                     |
+| **Tailwind CSS** | Modern, utility-first styling          |
+| **Supabase**     | Auth, storage, and serverless backend  |
+| **TypeScript**   | Type safety + scalability              |
+
+---
+
+## 🗂️ File Structure
+
+/app
+├─ /dashboard → Secure dashboard + stats
+├─ /upload → File upload + listing UI
+├─ /profile → Avatar, email, password settings
+/components
+├─ DashboardLayout → Sidebar + layout wrapper
+├─ FileUploader → Upload logic + dropzone
+├─ FileList → File view modes (list/thumb/detail)
+/lib
+└─ supabaseClient → Supabase singleton config
+/public
+└─ hero/ → Landing page visuals
+
+
+---
+
+## 🛠 Setup
+
+> You’ll need a Supabase project with:
+> - A `nimbus-uploads` bucket (private)
+> - An `avatars` bucket (public or with RLS `INSERT` policy)
+> - Auth enabled (email/password)
+
+### 1. Clone + install
+
+git clone https://github.com/richfish85/nimbus.git
+cd nimbus
+npm install
+
+1. Add environment variables
+Create .env.local:
+
+env
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+
+2. Run locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🧪 Roadmap
+ Drag & drop file uploads
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ Folder support
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ Real-time sync
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ Shareable file links
 
-## Learn More
+ Dark mode toggle
 
-To learn more about Next.js, take a look at the following resources:
+ Admin dashboard for usage oversight
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📸 Screenshots
+![main Nimbus page](image.png)
+![dashboard](image-1.png)
+![profile page](image-2.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+📄 License
+This project is for personal and educational use. Reach out for licensing or collaboration opportunities.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✨ Author
+Richard Fisher
+deepnet.com.au • Medium • Aspiring Cybersecurity Engineer & Full-stack Developer

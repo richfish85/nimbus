@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
-import Image from "next/image";
+
 /**
  * Types
  */
@@ -143,7 +143,7 @@ export default function FileList({ viewMode }: FileListProps) {
                 }`}
                 onClick={() => setSelected(file)}
               >
-                <Image src={file.url} alt={file.name} className="rounded shadow object-cover max-h-32 mx-auto" />
+                <img src={file.url} alt={file.name} className="rounded shadow object-cover max-h-32 mx-auto" />
                 <p className="mt-2 text-xs text-gray-600 truncate">{file.name}</p>
               </div>
             ))}
@@ -207,7 +207,7 @@ export default function FileList({ viewMode }: FileListProps) {
               {selected.name}
             </h2>
             {isImage(selected) ? (
-              <Image
+              <img
                 src={selected.url}
                 alt={selected.name}
                 className="w-full h-auto rounded mb-3"
