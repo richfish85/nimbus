@@ -43,24 +43,6 @@ Nimbus is a sleek, user-friendly cloud storage platform built with **Next.js**, 
 
 ---
 
-## 🗂️ File Structure
-
-/app
-├─ /dashboard → Secure dashboard + stats
-├─ /upload → File upload + listing UI
-├─ /profile → Avatar, email, password settings
-/components
-├─ DashboardLayout → Sidebar + layout wrapper
-├─ FileUploader → Upload logic + dropzone
-├─ FileList → File view modes (list/thumb/detail)
-/lib
-└─ supabaseClient → Supabase singleton config
-/public
-└─ hero/ → Landing page visuals
-
-
----
-
 ## 🛠 Setup
 
 > You’ll need a Supabase project with:
